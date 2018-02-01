@@ -15,6 +15,8 @@ defmodule User do
         file_name = user_data_filename()
         {:ok, file_content} = File.read(file_name)
         lines = String.split(file_content, "\r\n")
+        #Without empty lines
+        lines = Enum.filter(lines, fn(x) -> x != "" end)
         look_for_in(user, lines)
     end
 
@@ -63,6 +65,7 @@ defmodule User do
         #find the line where is de user in
         #change the money_amount of user
         #close file
+        {user, money_amount}
     end
 
     def get_money_amount(user) do
