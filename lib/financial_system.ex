@@ -13,7 +13,7 @@ defmodule FinancialSystem do
         if money >= money_user_from do
           raise "User #{user_from} does not have enough money"
         else
-          transfer(user_from, user_to, money)
+          transfer({user_from, money_user_from}, {user_to, money_user_to}, money)
         end
       )
       "EXCHANGE" -> (
@@ -23,15 +23,23 @@ defmodule FinancialSystem do
     end
   end
 
-  def debit_account(account, amount) do
+  def debit_account(account, current_amount, amount) do
+    #User.set_money_amount
     ""
   end
     
-  def credit_account(account, amount) do
+  def credit_account(account, current_amount, amount) do
+    #User.set_money_amount
     ""
   end
 
   def transfer(from, to, amount) do
+    #debit_account
+    try do
+      #credit_account
+    rescue
+      #undo debbit_account
+    end
     ""
   end
 
