@@ -35,11 +35,11 @@ defmodule FinancialSystem do
 
   def transfer(from, to, amount) do
     #debit_account
-    try do
+    #try do
       #credit_account
-    rescue
+    #rescue
       #undo debbit_account
-    end
+    #end
     ""
   end
 

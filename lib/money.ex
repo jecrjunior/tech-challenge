@@ -1,4 +1,8 @@
 defmodule Money do
+    defp normalize({mantissa, exponent}, to_exponent) do
+        
+    end
+
     def add(value1, value2) do
     end
 
@@ -11,11 +15,9 @@ defmodule Money do
     def div(value1, value2) do
     end
 
-    def lower_or_equal_than(value1, value2) do
-        
+    def lower_or_equal_than(value1, value2) do     
     end
 
     def greater_or_equal_than(value1, value2) do
-        
     end
 end
