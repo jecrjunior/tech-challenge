@@ -13,7 +13,7 @@ defmodule FinancialSystem do
         if money > money_user_from do
           raise "User #{user_from} does not have enough money"
         else
-          transfer({user_from, money_user_from}, {user_to, money_user_to}, money)
+          transfer(user_from, user_to, money)
         end
       )
       "EXCHANGE" -> (
@@ -45,4 +45,4 @@ defmodule FinancialSystem do
   end
 end
 
-FinancialSystem.transfer("pedro", "joao", 12.238217381238712873812738127)
+FinancialSystem.transfer("eurique", "carlos", "12.238217381238712873812738127")
