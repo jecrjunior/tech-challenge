@@ -21,15 +21,12 @@ defmodule Money do
     end
 
     def lower_or_equal_than(value1, value2) do   
-        div = D.div(D.new(value1), D.new(value2))
-        {D.to_float(div)}  
+        compare = D.compare(D.new(value1), D.new(value2))
+        {!D.equal?(compare, D.new(-1))}  
     end
 
     def greater_or_equal_than(value1, value2) do
-        div = D.div(D.new(value1), D.new(value2))
-        {D.to_float(div)}
+        compare = D.compare(D.new(value1), D.new(value2))
+        {!D.equal?(compare, D.new(1))}  
     end
 end
-
-{m} = Money.div(10.23, 8.7383)
- IO.puts m 

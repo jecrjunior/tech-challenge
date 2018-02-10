@@ -61,10 +61,12 @@ defmodule User do
     end
 
     def set_money_amount(user, money_amount) do
-        #open file
-        #find the line where is de user in
-        #change the money_amount of user
-        #close file
+        {p_user, p_password, p_money_amount} = check_account(user)
+        account = {p_user, p_password, p_money_amount}
+        file_name = user_data_filename()
+        {:ok, file_content} = File.read(file_name)
+        file_content = String.replace(file_content, "#{p_user} #{p_password} #{p_money_amount}", "#{user} #{p_password} #{money_amount}", global: false)
+        File.write(file_name, file_content)
         {user, money_amount}
     end
 
