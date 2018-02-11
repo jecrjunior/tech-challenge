@@ -8,15 +8,21 @@ defmodule FinancialSystem.Mixfile do
       compilers: Mix.compilers ++ [:cldr],
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
+      escript: escript(),
       deps: deps()
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
+  # Run "mix help compile.app" to learn about appl  ications.
   def application do
     [
-      applications: [:ex_cldr]
+      mod: {FinancialSystem, []},
+      applications: [:ex_cldr, :logger]
     ]
+  end
+
+  defp escript do
+    [main_module: FinancialSystem]
   end
 
   # Run "mix help deps" to learn about dependencies.

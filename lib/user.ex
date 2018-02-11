@@ -1,8 +1,23 @@
 defmodule User do
-    def user_data_filename do
+    @moduledoc """
+    Documentation for User.
+
+    """
+    @doc """
+    Name
+    ## Parameters
+    ## Examples
+    """
+    def user_data_filename do           
         "./data/users.dat"
     end
 
+
+    @doc """
+    Name
+    ## Parameters
+    ## Examples
+    """
     def login do
         without_crlf = fn str -> String.slice(str, 0..-2) end
         user = without_crlf.(IO.gets("Whats is your login name?"))
@@ -11,6 +26,11 @@ defmodule User do
         {user, money_amount}
     end
 
+    @doc """
+    Name
+    ## Parameters
+    ## Examples
+    """
     def check_account(user) do
         file_name = user_data_filename()
         {:ok, file_content} = File.read(file_name)
@@ -20,6 +40,11 @@ defmodule User do
         look_for_in(user, lines)
     end
 
+    @doc """
+    Name
+    ## Parameters
+    ## Examples
+    """
     def check_account(user, password) do
         {p_user, p_password, p_money_amount} = check_account(user)
         unless p_user == user && p_password == password do
@@ -29,6 +54,11 @@ defmodule User do
         end    
     end    
 
+    @doc """
+    Name
+    ## Parameters
+    ## Examples
+    """    
     def look_for_in(user, lines) do
         case lines do
             [] -> raise "User not found"
@@ -44,6 +74,11 @@ defmodule User do
         end
     end
 
+    @doc """
+    Name
+    ## Parameters
+    ## Examples
+    """
     def create_account(user, password) do
         try do
             {user, _, _} = check_account(user)
@@ -60,6 +95,11 @@ defmodule User do
         end
     end
 
+    @doc """
+    Name
+    ## Parameters
+    ## Examples
+    """
     def set_money_amount(user, money_amount) do
         {p_user, p_password, p_money_amount} = check_account(user)
         account = {p_user, p_password, p_money_amount}
@@ -69,8 +109,13 @@ defmodule User do
         File.write(file_name, file_content)
         {user, money_amount}
     end
-
-    def get_money_amount(user) do
+    
+    @doc """
+    Name
+    ## Parameters
+    ## Examples
+    """
+    def get_money_amount(user) do        
         {_, _, money_amount} = check_account(user)
         money_amount
     end   

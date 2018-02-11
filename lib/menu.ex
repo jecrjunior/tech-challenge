@@ -1,4 +1,13 @@
 defmodule Menu do
+    @moduledoc """
+    Documentation for Menu.
+
+    """
+    @doc """
+    Name
+    ## Parameters
+    ## Examples
+    """   
     def show_menu do
         IO.puts("*********Menu*********")
         IO.puts("1 - Transfer")
@@ -10,10 +19,16 @@ defmodule Menu do
             "1" -> "TRANSFER"
             "2" -> "EXCHANGE"
             "3" -> "OUT"
+            _   -> "INVALID"
         end
         {option}
     end
 
+    @doc """
+    Name
+    ## Parameters
+    ## Examples
+    """
     def show_menu_transfer do
         IO.puts("*********Menu transfer*********")
         IO.puts("What's the money amount?")
@@ -26,14 +41,19 @@ defmodule Menu do
         {money, {user_from, money_user_from}, {user_to, money_user_to}}
     end
 
+    @doc """
+    Name
+    ## Parameters
+    ## Examples
+    """
     def show_menu_exchange do
         IO.puts("What currency do you want to exchange?")
         {currency} = prompt_word("currency")
         IO.puts("From account:")
         {user_from, money} = User.login
         {currency, {user_from, money}}
-    end        
-
+    end
+    
     defp prompt_option() do
         without_crlf = fn str -> String.slice(str, 0..-2) end
         {without_crlf.(IO.gets("What is your option?"))}     
