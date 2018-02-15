@@ -1,13 +1,11 @@
 defmodule FinancialSystem do
   @moduledoc """
   Documentation for FinancialSystem.
-
   """
   use Application
   @doc """
-  Name
+  Entry point of application
   ## Parameters
-  ## Examples
   """  
   def start(_type, _args) do
     children = []
@@ -15,9 +13,8 @@ defmodule FinancialSystem do
   end
 
   @doc """
-  Name
+  Main function
   ## Parameters
-  ## Examples
   """    
   def main() do
     {option} = Menu.show_menu()
@@ -39,9 +36,8 @@ defmodule FinancialSystem do
   end
 
   @doc """
-  Name
+  Debit certain amount of money from an account
   ## Parameters
-  ## Examples
   """  
   def debit_account(account, current_amount, amount) do
     {value} = Money.sub(current_amount, amount)
@@ -49,9 +45,8 @@ defmodule FinancialSystem do
   end
 
   @doc """
-  Name
+  Credit certain amount of money into an account
   ## Parameters
-  ## Examples
   """      
   def credit_account(account, current_amount, amount) do
     {value} = Money.add(current_amount, amount)
@@ -59,9 +54,8 @@ defmodule FinancialSystem do
   end
 
   @doc """
-  Name
+  Transfer certain amount of money from an account to another
   ## Parameters
-  ## Examples
   """  
   def transfer(from, to, amount) do    
     {_, _, current_amount} = User.check_account(from)
@@ -71,9 +65,8 @@ defmodule FinancialSystem do
   end
 
   @doc """
-  Name
+  Exchanges some amount of money from a currency to another
   ## Parameters
-  ## Examples
   """   
   def exchange_money() do
     ""

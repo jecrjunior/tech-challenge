@@ -5,9 +5,8 @@ defmodule Money do
   """  
   alias Decimal, as: D
     @doc """
-    Name
+    Adds precisely two values
     ## Parameters
-    ## Examples
     """
     def add(value1, value2) do
         sum = D.add(D.new(value1), D.new(value2))
@@ -15,9 +14,8 @@ defmodule Money do
     end
 
     @doc """
-    Name
+    Subtracts precisely two values
     ## Parameters
-    ## Examples
     """
     def sub(value1, value2) do
         sub = D.sub(D.new(value1), D.new(value2))
@@ -25,9 +23,8 @@ defmodule Money do
     end
 
     @doc """
-    Name
+    Multiplies precisely the first value for the second
     ## Parameters
-    ## Examples
     """    
     def mul(value1, value2) do
         mul = D.mult(D.new(value1), D.new(value2))
@@ -35,9 +32,8 @@ defmodule Money do
     end
 
     @doc """
-    Name
+    Devides precisely the first value for the second
     ## Parameters
-    ## Examples
     """
     def div(value1, value2) do
         div = D.div(D.new(value1), D.new(value2))
@@ -45,9 +41,8 @@ defmodule Money do
     end
 
     @doc """
-    Name
+    Compares if the first value is greater or equal than the second
     ## Parameters
-    ## Examples
     """
     def lower_or_equal_than(value1, value2) do
         compare = D.compare(D.new(value1), D.new(value2))
@@ -55,9 +50,8 @@ defmodule Money do
     end
 
     @doc """
-    Name
+    Compares if the first value is lower or equal than the second
     ## Parameters
-    ## Examples
     """
     def greater_or_equal_than(value1, value2) do
         compare = D.compare(D.new(value1), D.new(value2))

@@ -4,9 +4,8 @@ defmodule Menu do
 
     """
     @doc """
-    Name
+    Present the main menu of application
     ## Parameters
-    ## Examples
     """   
     def show_menu do
         IO.puts("*********Menu*********")
@@ -25,9 +24,8 @@ defmodule Menu do
     end
 
     @doc """
-    Name
+    Present the transfer menu
     ## Parameters
-    ## Examples
     """
     def show_menu_transfer do
         IO.puts("*********Menu transfer*********")
@@ -42,9 +40,8 @@ defmodule Menu do
     end
 
     @doc """
-    Name
+    Present the exchange menu
     ## Parameters
-    ## Examples
     """
     def show_menu_exchange do
         IO.puts("What currency do you want to exchange?")
