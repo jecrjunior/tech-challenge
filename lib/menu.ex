@@ -18,7 +18,7 @@ defmodule Menu do
             "1" -> "TRANSFER"
             "2" -> "EXCHANGE"
             "3" -> "OUT"
-            _   -> "INVALID"
+             _  -> "INVALID"
         end
         {option}
     end

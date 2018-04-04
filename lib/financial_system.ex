@@ -24,7 +24,7 @@ defmodule FinancialSystem do
         if Money.greater_or_equal_than(money_user_from, money) do
           transfer(user_from, user_to, money)
         else
-          raise "User #{user_from} does not have enough money"          
+          raise "User #{user_from} does not have enough money."          
         end
       )
       "EXCHANGE" -> (
